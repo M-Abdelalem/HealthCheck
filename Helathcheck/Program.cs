@@ -37,8 +37,12 @@ app.UseHealthChecks("/hc", new HealthCheckOptions()
     options.AddCustomStylesheet("./Customization/custom.css");
 });
 
-app.UseRouting()
-.UseEndpoints(config => config.MapHealthChecksUI());
+app.UseRouting();
+app.UseHealthChecks("/hc", new HealthCheckOptions()
+{
+    Predicate = _ => true,
+    ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+}); 
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
