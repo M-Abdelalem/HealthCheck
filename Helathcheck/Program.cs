@@ -1,10 +1,7 @@
 using HealthChecks.System;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
-using Microsoft.Extensions.Options;
-using System.Data.SqlClient;
 
 var builder = WebApplication.CreateBuilder(args);
 
